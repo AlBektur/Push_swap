@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besaipid <besaipid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:39 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/19 05:19:42 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/21 05:09:33 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ static int	ft_counter(char const *s, char c)
 			counter++;
 		}
 		else if (s[i] == c)
-		{
 			flag = 0;
-		}
 		i++;
 	}
 	return (counter);

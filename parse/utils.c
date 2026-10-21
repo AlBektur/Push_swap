@@ -3,41 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besaipid <besaipid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:20:19 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/19 05:20:21 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/21 05:39:42 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
-
-void	ft_killer(t_list	*stack)
-{
-	t_list	*tmp;
-
-	while (stack != NULL)
-	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
-	}
-}
-
-void	ft_split_cleaner(char **res)
-{
-	int	i;
-
-	if (!res)
-		return ;
-	i = 0;
-	while (res[i])
-	{
-		free(res[i]);
-		i++;
-	}
-	free(res);
-}
 
 char	*ft_strdup(const char *s)
 {

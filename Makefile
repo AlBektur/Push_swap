@@ -8,9 +8,8 @@ INCLUDES := ./includes/header.h
 
 SRCS := ./parse/ft_split.c \
 		./parse/parser.c \
-		./parse/utils_2.c \
 		./parse/utils.c \
-		./parse/utils_3.c \
+		./parse/ft_split_validation.c \
 		./parse/validation.c \
 		./mains/main.c \
 		./moves/moves_a.c \

@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   utils_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besaipid <besaipid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:20:10 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/19 05:20:13 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/21 05:19:04 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
+
+int	is_valid_split(char const *tokens)
+{
+	int	i;
+
+	if (!tokens)
+		return (-1);
+	i = 0;
+	while (tokens[i])
+	{
+		if (tokens[i] >= '0' && tokens[i] <= '9')
+			return (1);
+		i++;
+	}
+	return (-1);
+}
 
 static int	split_controler(char *token)
 {

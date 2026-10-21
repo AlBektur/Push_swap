@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besaipid <besaipid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/19 05:19:33 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/21 05:16:40 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,25 @@ typedef struct s_list
 	int					data;
 	struct s_list		*next;
 }	t_list;
+
+
+typedef	struct s_flags
+{
+
+	/*
+	it is --adaptive por default;
+
+	1 = "--adaptive";
+	2 = "--simple";
+	3 = "--medium";
+	4 = "--complex";
+	*/
+	int	alg_type;
+
+	int	bench; // if there is a falg --bench it will equal to 1, else to -1
+} t_flags;
+
+
 
 // Parsing functions
 t_list	*make_stack(int size, char **tokens);
