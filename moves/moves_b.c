@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:28:01 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/22 16:57:25 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/22 17:11:39 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	sb(t_list **stack_b, t_flags *flags)
 	t_list	*first;
 	t_list	*second;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
-		return ; 
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
 	first = *stack_b;
 	second = first->next;
 	first->next = second->next;
@@ -36,8 +36,8 @@ void	rb(t_list **stack_b, t_flags *flags)
 	t_list	*first;
 	t_list	*last;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
-		return ; 
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
 	last = *stack_b;
 	first = *stack_b;
 	head = first->next;
@@ -58,8 +58,8 @@ void	rrb(t_list **stack_b, t_flags *flags)
 	t_list	*last;
 	t_list	*second;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
-		return ; 
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
 	second = *stack_b;
 	last = *stack_b;
 	while (last->next->next != NULL)
@@ -78,7 +78,7 @@ void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags)
 {
 	t_list	*stack_1_first;
 
-	if (*stack_b == NULL)                          
+	if (*stack_b == NULL)
 		return ;
 	stack_1_first = *stack_b;
 	*stack_b = stack_1_first->next;

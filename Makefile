@@ -12,11 +12,12 @@ SRCS := ./parse/ft_split.c \
 		./parse/ft_split_validation.c \
 		./parse/validation.c \
 		./parse/ft_definitions.c \
+		./parse/disorder.c \
 		./mains/main.c \
 		./moves/moves_a.c \
 		./moves/moves_b.c \
 		./sort/mini_sort.c \
-		./sort/sort_utils.c
+		./sort/sort_utils.c \
 
 
 OBJS := $(SRCS:.c=.o)

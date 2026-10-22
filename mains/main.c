@@ -46,6 +46,10 @@ int	main(int argc, char *argv[])
 
 
 	compute_disorder(stack_a, flags);
+
+	printf("disorder %d\n", flags->disorder);
+
+
 	ft_killer(stack_a);
 	ft_killer(stack_b);
 
