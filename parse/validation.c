@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:20:28 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/21 05:39:37 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/22 04:05:16 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ long	ft_atol(char *token, t_list *head)
 	res = 0;
 	while ((token[i] >= 9 && token[i] <= 13) || (token[i] == ' '))
 		i++;
-	if (token[i] == '-' || token[i] == '+')
+	while (token[i] == '-' || token[i] == '+')
 	{
 		if (token[i] == '-')
 			sign *= -1;

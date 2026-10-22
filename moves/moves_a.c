@@ -12,7 +12,7 @@
 
 #include "../includes/header.h"
 
-void	sa(t_list **stack_a)
+void	sa(t_list **stack_a, t_flags *flags)
 {
 	t_list	*first;
 	t_list	*second;
@@ -22,10 +22,12 @@ void	sa(t_list **stack_a)
 	first->next = second->next;
 	second->next = first;
 	*stack_a = second;
-	write(1, "sa\n", 3);
+	if (flags->bench != 1)
+		write(1, "sa\n", 3);
+	flags->sa += 1;
 }
 
-void	ra(t_list **stack_a)
+void	ra(t_list **stack_a, t_flags *flags)
 {
 	t_list	*head;
 	t_list	*first;
@@ -39,10 +41,12 @@ void	ra(t_list **stack_a)
 	last->next = first;
 	first->next = NULL;
 	*stack_a = head;
-	write(1, "ra\n", 3);
+	if (flags->bench != 1)
+		write(1, "ra\n", 3);
+	flags->ra += 1;
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_list **stack_a, t_flags *flags)
 {
 	t_list	*first;
 	t_list	*last;
@@ -56,10 +60,12 @@ void	rra(t_list **stack_a)
 	first->next = second;
 	last->next = NULL;
 	*stack_a = first;
-	write(1, "rra\n", 4);
+	if (flags->bench != 1)
+		write(1, "rra\n", 4);
+	flags->rra += 1;
 }
 
-void	push_b(t_list **stack_a, t_list **stack_b)
+void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	t_list	*stack_1_first;
 
@@ -67,5 +73,7 @@ void	push_b(t_list **stack_a, t_list **stack_b)
 	*stack_a = stack_1_first->next;
 	stack_1_first->next = *stack_b;
 	*stack_b = stack_1_first;
-	write(1, "pb\n", 3);
+	if (flags->bench != 1)
+		write(1, "pb\n", 3);
+	flags->pb += 1;
 }

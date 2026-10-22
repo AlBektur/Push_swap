@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:55 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/21 05:13:42 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/22 04:02:19 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ static int	arg_counter(char **res)
 
 	i = 0;
 	while (res[i])
-	{
 		i++;
-	}
 	return (i);
 }
 

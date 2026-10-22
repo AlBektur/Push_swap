@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/21 05:16:40 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/22 07:08:26 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,19 @@ typedef	struct s_flags
 	4 = "--complex";
 	*/
 	int	alg_type;
-
 	int	bench; // if there is a falg --bench it will equal to 1, else to -1
+	int	disorder;
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
 } t_flags;
 
 
@@ -58,18 +69,27 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		is_valid_split(char const *tokens);
 void	ft_split_controler(char **tokens);
 
-// the function to check if the given arguments are sorted already
-void	is_sorted(t_list *stack_a);
+void	init_flags(t_flags *flags);
+void	def_flags(int *argc, char **params[], t_flags *flags);
+
 
 //Op functions
-void	sa(t_list **stack_a);
-void	ra(t_list **stack_a);
-void	rra(t_list **stack_a);
-void	push_b(t_list **stack_a, t_list **stack_b);
+void	sa(t_list **stack_a, t_flags *flags);
+void	ra(t_list **stack_a, t_flags *flags);
+void	rra(t_list **stack_a, t_flags *flags);
+void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags);
 
-void	sb(t_list **stack_b);
-void	rb(t_list **stack_b);
-void	rrb(t_list **stack_b);
-void	push_a(t_list **stack_b, t_list **stack_a);
+void	sb(t_list **stack_b, t_flags *flags);
+void	rb(t_list **stack_b, t_flags *flags);
+void	rrb(t_list **stack_b, t_flags *flags);
+void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags);
+
+
+
+/// we start sorting here
+
+int	ft_lstsize(t_list *lst);
+//list with maximum 5 nodes
+void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 
 #endif
