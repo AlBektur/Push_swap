@@ -75,6 +75,8 @@ void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	t_list	*stack_1_first;
 
+	if (*stack_b == NULL)
+		return ;
 	stack_1_first = *stack_a;
 	*stack_a = stack_1_first->next;
 	stack_1_first->next = *stack_b;
