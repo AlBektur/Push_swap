@@ -17,6 +17,8 @@ void	sa(t_list **stack_a, t_flags *flags)
 	t_list	*first;
 	t_list	*second;
 
+	if (*stack_a == NULL || (*stack_a)->next == NULL)   // <<< AJOUT
+		return ; 
 	first = *stack_a;
 	second = first->next;
 	first->next = second->next;
@@ -34,6 +36,8 @@ void	ra(t_list **stack_a, t_flags *flags)
 	t_list	*first;
 	t_list	*last;
 
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
 	last = *stack_a;
 	first = *stack_a;
 	head = first->next;
@@ -54,6 +58,8 @@ void	rra(t_list **stack_a, t_flags *flags)
 	t_list	*last;
 	t_list	*second;
 
+	if (*stack_a == NULL || (*stack_a)->next == NULL)   // <<< AJOUT
+		return ; 
 	second = *stack_a;
 	last = *stack_a;
 	while (last->next->next != NULL)
@@ -72,6 +78,8 @@ void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	t_list	*stack_1_first;
 
+	if (*stack_b == NULL)
+		return ;
 	stack_1_first = *stack_a;
 	*stack_a = stack_1_first->next;
 	stack_1_first->next = *stack_b;
