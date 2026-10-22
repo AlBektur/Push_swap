@@ -25,6 +25,7 @@ void	sa(t_list **stack_a, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "sa\n", 3);
 	flags->sa += 1;
+	flags->total_op += 1;
 }
 
 void	ra(t_list **stack_a, t_flags *flags)
@@ -44,6 +45,7 @@ void	ra(t_list **stack_a, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "ra\n", 3);
 	flags->ra += 1;
+	flags->total_op += 1;
 }
 
 void	rra(t_list **stack_a, t_flags *flags)
@@ -63,6 +65,7 @@ void	rra(t_list **stack_a, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "rra\n", 4);
 	flags->rra += 1;
+	flags->total_op += 1;
 }
 
 void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags)
@@ -76,4 +79,5 @@ void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "pb\n", 3);
 	flags->pb += 1;
+	flags->total_op += 1;
 }

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "./includes/header.h"
 
 void	compute_disorder(t_list *stack_a, t_flags *flags)
 {

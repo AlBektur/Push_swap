@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:28:01 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/22 05:19:26 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/22 16:57:25 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	sb(t_list **stack_b, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "sb\n", 3);
 	flags->sb += 1;
+	flags->total_op += 1;
 }
 
 void	rb(t_list **stack_b, t_flags *flags)
@@ -44,6 +45,7 @@ void	rb(t_list **stack_b, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "rb\n", 3);
 	flags->rb += 1;
+	flags->total_op += 1;
 }
 
 void	rrb(t_list **stack_b, t_flags *flags)
@@ -63,6 +65,7 @@ void	rrb(t_list **stack_b, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "rrb\n", 4);
 	flags->rrb += 1;
+	flags->total_op += 1;
 }
 
 void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags)
@@ -76,4 +79,5 @@ void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags)
 	if (flags->bench != 1)
 		write(1, "pa\n", 3);
 	flags->pa += 1;
+	flags->total_op += 1;
 }

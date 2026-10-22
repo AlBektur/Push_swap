@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/22 07:08:26 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/22 17:02:25 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef	struct s_flags
 	int	rra;
 	int	rrb;
 	int	rrr;
+	int	total_op;
 } t_flags;
 
 
@@ -71,7 +72,7 @@ void	ft_split_controler(char **tokens);
 
 void	init_flags(t_flags *flags);
 void	def_flags(int *argc, char **params[], t_flags *flags);
-
+void	compute_disorder(t_list *stack_a, t_flags *flags);
 
 //Op functions
 void	sa(t_list **stack_a, t_flags *flags);
