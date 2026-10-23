@@ -98,4 +98,12 @@ void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 // for --simple mode
 void	selection_sort(t_list **stack_a, t_list **stack_b, t_flags *flags);
 
+// for --medium mode
+void	sort_medium(t_list **stack_a, t_list **stack_b, t_flags *flags);
+void	normalize_ranks(t_list *stack, int n);
+int		get_max_index(t_list *b);
+void	bring_top_b(t_list **b, int idx, int size, t_flags *flags);
+
+// for --complex mode
+void	sort_complex(t_list **stack_a, t_list **stack_b, t_flags *flags);
 #endif
