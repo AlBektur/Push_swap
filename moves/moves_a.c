@@ -17,7 +17,7 @@ void	sa(t_list **stack_a, t_flags *flags)
 	t_list	*first;
 	t_list	*second;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)   // <<< AJOUT
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	first = *stack_a;
 	second = first->next;
