@@ -18,6 +18,7 @@ SRCS := ./parse/ft_split.c \
 		./moves/moves_b.c \
 		./sort/mini_sort.c \
 		./sort/sort_utils.c \
+		./sort/selection_sort.c \
 
 
 OBJS := $(SRCS:.c=.o)

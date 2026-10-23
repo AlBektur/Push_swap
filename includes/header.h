@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/23 01:51:32 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/23 02:52:03 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,10 @@ void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags);
 
 
 /// we start sorting here
-
+void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 int	ft_lstsize(t_list *lst);
 //list with maximum 5 nodes
 void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);
+void	selection_sort(t_list **stack_a, t_list **stack_b, t_flags *flags);
 
 #endif

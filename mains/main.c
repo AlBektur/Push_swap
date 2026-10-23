@@ -43,13 +43,16 @@ int	main(int argc, char *argv[])
 	//ft_print_stack(stack_a);
 
 	//this function sorts if stack size <= 5
-	mini_sort(&stack_a, &stack_b, flags);
+	//mini_sort(&stack_a, &stack_b, flags);
 
 	//ft_print_stack(stack_a);
 	compute_disorder(stack_a, flags);
 
 	//printf("disorder %d\n", flags->disorder);
 
+	selection_sort(&stack_a, &stack_b, flags);
+
+	//ft_print_stack(stack_a);
 
 	ft_killer(stack_a);
 	ft_killer(stack_b);
