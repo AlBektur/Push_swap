@@ -20,6 +20,9 @@ SRCS := ./parse/ft_split.c \
 		./sort/mini_sort.c \
 		./sort/sort_utils.c \
 		./sort/selection_sort.c \
+		./sort/sort_complex.c \
+		./sort/sort_medium.c \
+		./sort/sort_medium_utils.c \
 
 
 OBJS := $(SRCS:.c=.o)
