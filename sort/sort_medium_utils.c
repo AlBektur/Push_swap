@@ -1,4 +1,4 @@
-#include "../includes/header.h"
+#include "header.h"
 
 static int	count_smaller(t_list *stack, int value)
 {
