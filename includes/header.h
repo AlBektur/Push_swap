@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/22 17:02:25 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/23 01:51:32 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ typedef	struct s_flags
 	int	total_op;
 } t_flags;
 
-
+// aux function needs to be deleted
+void	ft_print_stack(t_list *stack);
 
 // Parsing functions
 t_list	*make_stack(int size, char **tokens);

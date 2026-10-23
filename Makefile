@@ -1,4 +1,4 @@
-NAME    := run
+NAME    := push_swap
 CC      := cc -g
 
 # we compile without flags while we doing the project, needs to be added later

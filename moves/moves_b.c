@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:28:01 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/22 17:11:39 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/23 02:08:59 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags)
 {
 	t_list	*stack_1_first;
 
-	if (*stack_b == NULL)
-		return ;
 	stack_1_first = *stack_b;
 	*stack_b = stack_1_first->next;
 	stack_1_first->next = *stack_a;
