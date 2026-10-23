@@ -16,11 +16,9 @@ static int	count_smaller(t_list *stack, int value)
 	return (count);
 }
 
-static void	index_stack(t_list *stack, int n)
+static int	*alloc_ranks(t_list *stack, int n)
 {
-	int		*ranks;
-	t_list	*cur;
-	int		k;
+	int	*ranks;
 
 	ranks = malloc(sizeof(int) * n);
 	if (ranks == NULL)
@@ -29,6 +27,16 @@ static void	index_stack(t_list *stack, int n)
 		write(2, "Error\n", 6);
 		exit(1);
 	}
+	return (ranks);
+}
+
+static void	index_stack(t_list *stack, int n)
+{
+	int		*ranks;
+	t_list	*cur;
+	int		k;
+
+	ranks = alloc_ranks(stack, n);
 	cur = stack;
 	k = 0;
 	while (cur != NULL)
