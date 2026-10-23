@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/23 02:52:03 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/23 05:09:45 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef	struct s_flags
 
 // aux function needs to be deleted
 void	ft_print_stack(t_list *stack);
+void	make_bench(t_flags *flags);
 
 // Parsing functions
 t_list	*make_stack(int size, char **tokens);
@@ -93,6 +94,8 @@ void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 int	ft_lstsize(t_list *lst);
 //list with maximum 5 nodes
 void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);
+
+// for --simple mode
 void	selection_sort(t_list **stack_a, t_list **stack_b, t_flags *flags);
 
 #endif

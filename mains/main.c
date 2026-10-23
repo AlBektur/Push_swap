@@ -54,6 +54,9 @@ int	main(int argc, char *argv[])
 
 	//ft_print_stack(stack_a);
 
+	if (flags->bench)
+		make_bench(flags);
+
 	ft_killer(stack_a);
 	ft_killer(stack_b);
 

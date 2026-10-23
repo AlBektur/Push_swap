@@ -13,6 +13,7 @@ SRCS := ./parse/ft_split.c \
 		./parse/validation.c \
 		./parse/ft_definitions.c \
 		./parse/disorder.c \
+		bench.c \
 		./mains/main.c \
 		./moves/moves_a.c \
 		./moves/moves_b.c \
