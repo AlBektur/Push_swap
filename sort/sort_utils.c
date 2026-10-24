@@ -35,3 +35,14 @@ t_list	*last_node(t_list *stack)
 		stack = stack->next;
 	return (stack);
 }
+
+int	is_sorted(t_list *stack)
+{
+	while (stack != NULL && stack->next != NULL)
+	{
+		if (stack->data > stack->next->data)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
