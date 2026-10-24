@@ -58,7 +58,7 @@ void	rra(t_list **stack_a, t_flags *flags)
 	t_list	*last;
 	t_list	*second;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)   // <<< AJOUT
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	second = *stack_a;
 	last = *stack_a;
