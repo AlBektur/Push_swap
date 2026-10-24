@@ -100,6 +100,8 @@ void	rrr(t_list **stack_a, t_list **stack_b, t_flags *flags);
 void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 int	ft_lstsize(t_list *lst);
 t_list	*last_node(t_list *stack);
+int	is_sorted(t_list *stack);
+
 //list with maximum 5 nodes
 void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 
