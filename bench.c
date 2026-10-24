@@ -18,12 +18,12 @@ void	ft_putnbr(int nb)
 
 	if (nb == INT_MIN)
 	{
-		write(1, "-2147483648", 11);
+		write(2, "-2147483648", 11);
 		return ;
 	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		write(2, "-", 1);
 		nb *= -1;
 	}
 	if (nb > 9)
