@@ -16,18 +16,30 @@ void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags)
 {
 	t_list	*temp;
 	int		min;
-
+	int		idx;
+	int		i;
+ 
 	temp = *stack_a;
-	min = (*stack_a)->data;
+	min = temp->data;
+	idx = 0;
+	i = 0;
 	while (temp)
 	{
 		if (min > temp->data)
+		{
 			min = temp->data;
+			idx = i;
+		}
 		temp = temp->next;
+		i++;
 	}
-	temp = *stack_a;
 	while ((*stack_a)->data != min)
-		ra(stack_a, flags);
+	{
+		if (idx <= i / 2)
+			ra(stack_a, flags);
+		else
+			rra(stack_a, flags);
+	}
 	push_b(stack_a, stack_b, flags);
 }
 
