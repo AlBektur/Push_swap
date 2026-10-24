@@ -13,17 +13,22 @@ static int	ps_isqrt(int n)
 static void	push_to_b(t_list **a, t_list **b, t_flags *flags)
 {
 	int	chunk;
-	int	upper;
+	int	pushed;
 
-	chunk = ps_isqrt(ft_lstsize(*a)) + 1;
-	upper = chunk;
+	chunk = ps_isqrt(ft_lstsize(*a)) * 14 / 10;
+	pushed = 0;
 	while (*a != NULL)
 	{
-		if ((*a)->data < upper)
+		if ((*a)->data <= pushed)
 		{
 			push_b(a, b, flags);
-			if (ft_lstsize(*b) >= upper)
-				upper += chunk;
+			rb(b, flags);
+			pushed++;
+		}
+		else if ((*a)->data <= pushed + chunk)
+		{
+			push_b(a, b, flags);
+			pushed++;
 		}
 		else
 			ra(a, flags);
