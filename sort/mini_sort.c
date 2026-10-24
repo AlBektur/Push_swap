@@ -60,6 +60,14 @@ static void	sort_3(t_list **stack, t_flags *flags)
 
 void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags)
 {
+	if (ft_lstsize(*stack_a) == 2)
+	{
+		if ((*stack_a)->data > (*stack_a)->next->data)
+			sa(stack_a, flags);
+		return ;
+	}
+	if (ft_lstsize(*stack_a) < 2)
+		return ;
 	while (ft_lstsize(*stack_a) > 3)
 		send_min_val(stack_a, stack_b, flags);
 	sort_3(stack_a, flags);
