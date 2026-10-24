@@ -29,7 +29,7 @@ void	ft_putnbr(int nb)
 	if (nb > 9)
 		ft_putnbr(nb / 10);
 	n = nb % 10 + '0';
-	write(1, &n, 1);
+	write(2, &n, 1);
 }
 
 static void	ft_putstr(char *str)
@@ -48,7 +48,7 @@ static void	bench_print_alg_type(int n)
 {
 	char	*algorithms[5];
 
-	algorithms[0] = "Adaptive / 0(n√n)";
+	algorithms[0] = "Adaptive / O(n√n)";
 	algorithms[1] = "Simple / O(n2)";
 	algorithms[2] = "Medium / O(n√n)";
 	algorithms[3] = "Complex / O(n log n)";
@@ -89,6 +89,8 @@ void	make_bench(t_flags *flags)
 	write(2, "[bench] disorder: ", 18);
 	ft_putnbr(flags->disorder / 100);
 	write(2, ".", 1);
+	if (flags->disorder % 100 < 10)
+		write(2, "0", 1);
 	ft_putnbr(flags->disorder % 100);
 	write(2, "%\n", 2);
 	write(2, "[bench] strategy: ", 18);
