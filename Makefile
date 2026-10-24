@@ -17,6 +17,8 @@ SRCS := ./parse/ft_split.c \
 		./mains/main.c \
 		./moves/moves_a.c \
 		./moves/moves_b.c \
+		./moves/moves_ab.c \
+		./moves/moves_utils.c \
 		./sort/mini_sort.c \
 		./sort/sort_utils.c \
 		./sort/selection_sort.c \
