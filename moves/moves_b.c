@@ -24,8 +24,7 @@ void	sb(t_list **stack_b, t_flags *flags)
 	first->next = second->next;
 	second->next = first;
 	*stack_b = second;
-	if (flags->bench != 1)
-		write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 	flags->sb += 1;
 	flags->total_op += 1;
 }
@@ -46,8 +45,7 @@ void	rb(t_list **stack_b, t_flags *flags)
 	last->next = first;
 	first->next = NULL;
 	*stack_b = head;
-	if (flags->bench != 1)
-		write(1, "rb\n", 3);
+	write(1, "rb\n", 3);
 	flags->rb += 1;
 	flags->total_op += 1;
 }
@@ -68,8 +66,7 @@ void	rrb(t_list **stack_b, t_flags *flags)
 	first->next = second;
 	last->next = NULL;
 	*stack_b = first;
-	if (flags->bench != 1)
-		write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 	flags->rrb += 1;
 	flags->total_op += 1;
 }
@@ -82,8 +79,7 @@ void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags)
 	*stack_b = stack_1_first->next;
 	stack_1_first->next = *stack_a;
 	*stack_a = stack_1_first;
-	if (flags->bench != 1)
-		write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 	flags->pa += 1;
 	flags->total_op += 1;
 }
