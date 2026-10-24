@@ -71,8 +71,9 @@ int	main(int argc, char *argv[])
 	//sort_complex(&stack_a, &stack_b, flags);
 	//sort_medium(&stack_a, &stack_b, flags);
 	//selection_sort(&stack_a, &stack_b, flags);
-
-	sort(&stack_a, &stack_b, flags);
+	
+	if (!is_sorted(stack_a))
+		sort(&stack_a, &stack_b, flags);
 
 	if (flags->bench)
 		make_bench(flags);
