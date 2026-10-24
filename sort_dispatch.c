@@ -1,4 +1,4 @@
-#include "header.h"
+#include "./includes/header.h"
 
 void	sort_dispatch(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {

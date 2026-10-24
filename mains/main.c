@@ -25,6 +25,33 @@ void	ft_print_stack(t_list *stack)
 	printf("\n");
 }
 
+void	sort_adaptive_mode(t_list **stack_a, t_list **stack_b, t_flags *flags)
+{
+	if (flags->disorder < 2000)
+		selection_sort(stack_a, stack_b, flags);
+	else if (flags->disorder >= 2000 && flags->disorder < 5000)
+		sort_medium(stack_a, stack_b, flags);
+	else if (flags->disorder >= 5000)
+		sort_complex(stack_a, stack_b, flags);
+}
+
+void	sort(t_list **stack_a, t_list **stack_b, t_flags *flags)
+{
+	if (ft_lstsize(*stack_a) < 6)
+		mini_sort(stack_a, stack_b, flags);
+	else
+	{
+		if (flags->alg_type == 1)
+			sort_adaptive_mode(stack_a, stack_b, flags);
+		else if (flags->alg_type == 2)
+			selection_sort(stack_a, stack_b, flags);
+		else if (flags->alg_type == 3)
+			sort_medium(stack_a, stack_b, flags);
+		else if (flags->alg_type == 4)
+			sort_complex(stack_a, stack_b, flags);
+	}
+
+}
 
 int	main(int argc, char *argv[])
 {
@@ -40,19 +67,12 @@ int	main(int argc, char *argv[])
 	def_flags(&argc, &argv, flags);
 
 	stack_a = make_stack(argc, argv);
-	//ft_print_stack(stack_a);
-
-	//this function sorts if stack size <= 5
-	//mini_sort(&stack_a, &stack_b, flags);
-
-	//ft_print_stack(stack_a);
 	compute_disorder(stack_a, flags);
+	//sort_complex(&stack_a, &stack_b, flags);
+	//sort_medium(&stack_a, &stack_b, flags);
+	//selection_sort(&stack_a, &stack_b, flags);
 
-	//printf("disorder %d\n", flags->disorder);
-
-	selection_sort(&stack_a, &stack_b, flags);
-
-	//ft_print_stack(stack_a);
+	sort(&stack_a, &stack_b, flags);
 
 	if (flags->bench)
 		make_bench(flags);

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../includes/header.h"
 
 static int	ps_isqrt(int n)
 {
