@@ -13,6 +13,7 @@ void	rr(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	rotate_list(stack_a);
 	rotate_list(stack_b);
+	if (!flags->bench)
 	write(1, "rr\n", 3);
 	flags->rr += 1;
 	flags->total_op += 1;

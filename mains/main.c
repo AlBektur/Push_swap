@@ -17,7 +17,7 @@ void	ft_print_stack(t_list *stack)
 	t_list	*temp;
 
 	temp = stack;
-	while(temp)
+	while (temp)
 	{
 		printf("%d -> ", temp->data);
 		temp = temp->next;
@@ -50,7 +50,6 @@ void	sort(t_list **stack_a, t_list **stack_b, t_flags *flags)
 		else if (flags->alg_type == 4)
 			sort_complex(stack_a, stack_b, flags);
 	}
-
 }
 
 int	main(int argc, char *argv[])
@@ -62,24 +61,15 @@ int	main(int argc, char *argv[])
 
 	flags = &node_for_flags;
 	stack_b = NULL;
-
 	init_flags(flags);
 	def_flags(&argc, &argv, flags);
-
 	stack_a = make_stack(argc, argv);
 	compute_disorder(stack_a, flags);
-	//sort_complex(&stack_a, &stack_b, flags);
-	//sort_medium(&stack_a, &stack_b, flags);
-	//selection_sort(&stack_a, &stack_b, flags);
-	
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b, flags);
-
 	if (flags->bench)
 		make_bench(flags);
-
 	ft_killer(stack_a);
 	ft_killer(stack_b);
-
 	return (0);
 }

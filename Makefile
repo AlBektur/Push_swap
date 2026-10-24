@@ -1,5 +1,6 @@
 NAME    := push_swap
 CC      := cc -g
+BONUS   := checker
 
 # we compile without flags while we doing the project, needs to be added later
 CFLAGS  := -Wall -Wextra -Werror
@@ -29,6 +30,7 @@ SRCS := ./parse/ft_split.c \
 
 
 OBJS := $(SRCS:.c=.o)
+
 
 all : $(NAME)
 
