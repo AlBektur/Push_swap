@@ -28,3 +28,10 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+t_list	*last_node(t_list *stack)
+{
+	while (stack != NULL && stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}
