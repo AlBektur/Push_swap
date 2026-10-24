@@ -87,11 +87,19 @@ void	rb(t_list **stack_b, t_flags *flags);
 void	rrb(t_list **stack_b, t_flags *flags);
 void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags);
 
+void	swap_list(t_list **stack);
+void	rotate_list(t_list **stack);
+void	rev_rotate_list(t_list **stack);
+void	ss(t_list **stack_a, t_list **stack_b, t_flags *flags);
+void	rr(t_list **stack_a, t_list **stack_b, t_flags *flags);
+void	rrr(t_list **stack_a, t_list **stack_b, t_flags *flags);
+
 
 
 /// we start sorting here
 void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 int	ft_lstsize(t_list *lst);
+t_list	*last_node(t_list *stack);
 //list with maximum 5 nodes
 void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);
 
