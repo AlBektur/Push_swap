@@ -12,19 +12,6 @@
 
 #include "../includes/header.h"
 
-void	ft_print_stack(t_list *stack)
-{
-	t_list	*temp;
-
-	temp = stack;
-	while (temp)
-	{
-		printf("%d -> ", temp->data);
-		temp = temp->next;
-	}
-	printf("\n");
-}
-
 void	sort_adaptive_mode(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	if (flags->disorder < 2000)
