@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:28:01 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/25 01:14:26 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 00:44:39 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	sb(t_list **stack_b, t_flags *flags)
 	first->next = second->next;
 	second->next = first;
 	*stack_b = second;
-	write(1, "sb\n", 3);
+	if (!flags->checker)
+		write(1, "sb\n", 3);
 	flags->sb += 1;
 	flags->total_op += 1;
 }
@@ -45,7 +46,8 @@ void	rb(t_list **stack_b, t_flags *flags)
 	last->next = first;
 	first->next = NULL;
 	*stack_b = head;
-	write(1, "rb\n", 3);
+	if (!flags->checker)
+		write(1, "rb\n", 3);
 	flags->rb += 1;
 	flags->total_op += 1;
 }
@@ -66,7 +68,8 @@ void	rrb(t_list **stack_b, t_flags *flags)
 	first->next = second;
 	last->next = NULL;
 	*stack_b = first;
-	write(1, "rrb\n", 4);
+	if (!flags->checker)
+		write(1, "rrb\n", 4);
 	flags->rrb += 1;
 	flags->total_op += 1;
 }
@@ -79,7 +82,8 @@ void	push_a(t_list **stack_b, t_list **stack_a, t_flags *flags)
 	*stack_b = stack_1_first->next;
 	stack_1_first->next = *stack_a;
 	*stack_a = stack_1_first;
-	write(1, "pa\n", 3);
+	if (!flags->checker)
+		write(1, "pa\n", 3);
 	flags->pa += 1;
 	flags->total_op += 1;
 }

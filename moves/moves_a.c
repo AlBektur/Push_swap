@@ -24,7 +24,8 @@ void	sa(t_list **stack_a, t_flags *flags)
 	first->next = second->next;
 	second->next = first;
 	*stack_a = second;
-	write(1, "sa\n", 3);
+	if (!flags->checker)
+		write(1, "sa\n", 3);
 	flags->sa += 1;
 	flags->total_op += 1;
 }
@@ -45,7 +46,8 @@ void	ra(t_list **stack_a, t_flags *flags)
 	last->next = first;
 	first->next = NULL;
 	*stack_a = head;
-	write(1, "ra\n", 3);
+	if (!flags->checker)
+		write(1, "ra\n", 3);
 	flags->ra += 1;
 	flags->total_op += 1;
 }
@@ -66,7 +68,8 @@ void	rra(t_list **stack_a, t_flags *flags)
 	first->next = second;
 	last->next = NULL;
 	*stack_a = first;
-	write(1, "rra\n", 4);
+	if (!flags->checker)
+		write(1, "rra\n", 4);
 	flags->rra += 1;
 	flags->total_op += 1;
 }
@@ -81,7 +84,8 @@ void	push_b(t_list **stack_a, t_list **stack_b, t_flags *flags)
 	*stack_a = stack_1_first->next;
 	stack_1_first->next = *stack_b;
 	*stack_b = stack_1_first;
-	write(1, "pb\n", 3);
+	if (!flags->checker)
+		write(1, "pb\n", 3);
 	flags->pb += 1;
 	flags->total_op += 1;
 }

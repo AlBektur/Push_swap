@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 01:45:54 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/25 02:53:05 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 00:43:57 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	init_flags(t_flags *flags)
 	flags->rrb = 0;
 	flags->rrr = 0;
 	flags->total_op = 0;
+	flags->checker = 0;
 }
 
 static int	ft_strcmp(char *s1, char *s2)

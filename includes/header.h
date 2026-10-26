@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/25 02:53:50 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 01:05:31 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef	struct s_flags
 	4 = "--complex";
 	*/
 	int	alg_type;
-	int	bench; // if there is a falg --bench it will equal to 1, else to -1
+	int	bench;
 	int	disorder;
 	int	sa;
 	int	sb;
@@ -53,6 +53,7 @@ typedef	struct s_flags
 	int	rrb;
 	int	rrr;
 	int	total_op;
+	int	checker;
 } t_flags;
 
 void	ft_print_stack(t_list *stack);

@@ -26,7 +26,6 @@ SRCS := ./parse/ft_split.c \
 		./sort/sort_complex.c \
 		./sort/sort_medium.c \
 		./sort/sort_medium_utils.c \
-		sort_dispatch.c \
 
 SRCS_BONUS := ./parse/ft_split.c \
 		./parse/parser.c \
