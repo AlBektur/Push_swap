@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 05:19:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/26 01:05:31 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 04:53:11 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ typedef struct s_list
 	struct s_list		*next;
 }	t_list;
 
-
-typedef	struct s_flags
+typedef struct s_flags
 {
-
 	/*
 	it is --adaptive por default;
 
@@ -54,7 +52,7 @@ typedef	struct s_flags
 	int	rrr;
 	int	total_op;
 	int	checker;
-} t_flags;
+}		t_flags;
 
 void	ft_print_stack(t_list *stack);
 void	make_bench(t_flags *flags);
@@ -94,13 +92,11 @@ void	ss(t_list **stack_a, t_list **stack_b, t_flags *flags);
 void	rr(t_list **stack_a, t_list **stack_b, t_flags *flags);
 void	rrr(t_list **stack_a, t_list **stack_b, t_flags *flags);
 
-
-
 /// we start sorting here
 void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags);
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 t_list	*last_node(t_list *stack);
-int	is_sorted(t_list *stack);
+int		is_sorted(t_list *stack);
 
 //list with maximum 5 nodes
 void	mini_sort(t_list **stack_a, t_list	**stack_b, t_flags *flags);

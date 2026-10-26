@@ -52,20 +52,20 @@ all : $(NAME)
 bonus: $(BONUS)
 
 $(NAME): $(OBJS)
-	$(CC)  $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(BONUS): $(OBJS_BONUS)
-	$(CC) $(OBJS_BONUS) -o $(BONUS)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(BONUS)
 
 %.o: %.c $(INCLUDES) Makefile
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS)
 
 re : fclean all
 

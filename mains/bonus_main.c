@@ -6,25 +6,12 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 02:11:00 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/26 01:05:05 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 04:56:03 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 #include "../includes/bonus_header.h"
-
-void	ft_print_stack(t_list *stack)
-{
-	t_list	*temp;
-
-	temp = stack;
-	while (temp)
-	{
-		printf("%d -> ", temp->data);
-		temp = temp->next;
-	}
-	printf("\n");
-}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -40,33 +27,33 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (1);
 }
 
-void	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *command)
+void	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
 {
-	if (ft_strncmp(command, "sa\n", 3))
+	if (ft_strncmp(line, "sa\n", 3))
 		sa(stack_a, flags);
-	else if (ft_strncmp(command, "sb\n", 3))
+	else if (ft_strncmp(line, "sb\n", 3))
 		sb(stack_b, flags);
-	else if (ft_strncmp(command, "ss\n", 3))
+	else if (ft_strncmp(line, "ss\n", 3))
 		ss(stack_a, stack_b, flags);
-	else if (ft_strncmp(command, "pa\n", 3))
+	else if (ft_strncmp(line, "pa\n", 3))
 		push_a(stack_b, stack_a, flags);
-	else if (ft_strncmp(command, "pb\n", 3))
+	else if (ft_strncmp(line, "pb\n", 3))
 		push_b(stack_a, stack_b, flags);
-	else if (ft_strncmp(command, "ra\n", 3))
+	else if (ft_strncmp(line, "ra\n", 3))
 		ra(stack_a, flags);
-	else if (ft_strncmp(command, "rb\n", 3))
+	else if (ft_strncmp(line, "rb\n", 3))
 		rb(stack_b, flags);
-	else if (ft_strncmp(command, "rr\n", 3))
+	else if (ft_strncmp(line, "rr\n", 3))
 		rr(stack_a, stack_b, flags);
-	else if (ft_strncmp(command, "rra\n", 4))
+	else if (ft_strncmp(line, "rra\n", 4))
 		rra(stack_a, flags);
-	else if (ft_strncmp(command, "rrb\n", 4))
+	else if (ft_strncmp(line, "rrb\n", 4))
 		rrb(stack_b, flags);
-	else if (ft_strncmp(command, "rrr\n", 4))
+	else if (ft_strncmp(line, "rrr\n", 4))
 		rrr(stack_a, stack_b, flags);
 	else
 		return ;
-	}
+}
 
 int	main(int argc, char *argv[])
 {

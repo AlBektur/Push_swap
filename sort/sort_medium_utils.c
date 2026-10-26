@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_medium_utils.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 05:02:08 by besaipid          #+#    #+#             */
+/*   Updated: 2026/10/26 05:05:07 by besaipid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/header.h"
 
 static int	count_smaller(t_list *stack, int value)
 {
-	t_list	*cur;
 	int		count;
+	t_list	*cur;
 
 	cur = stack;
 	count = 0;

@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 01:45:54 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/26 00:43:57 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 04:58:31 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ static void	def_algorithms(t_flags *flags, int *argc, char **params[])
 
 void	def_flags(int *argc, char **params[], t_flags *flags)
 {
-	int		i;
 	int		counter;
 
 	counter = 0;

@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:12:30 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/25 04:36:07 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/26 04:53:30 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 char	*my_strdup(char *s);
 char	*substr(char *str, int index);
-
-
-
-
 
 # ifndef MAX_FD
 #  ifdef OPEN_MAX
