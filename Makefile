@@ -2,10 +2,10 @@ NAME    := push_swap
 CC      := cc -g
 BONUS   := checker
 
-# we compile without flags while we doing the project, needs to be added later
 CFLAGS  := -Wall -Wextra -Werror
 
-INCLUDES := ./includes/header.h
+INCLUDES := ./includes/header.h \
+			./includes/bonus_header.h
 
 SRCS := ./parse/ft_split.c \
 		./parse/parser.c \
@@ -69,4 +69,4 @@ fclean: clean
 
 re : fclean all
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all bonus
