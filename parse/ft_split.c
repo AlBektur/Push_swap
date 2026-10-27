@@ -66,11 +66,9 @@ static int	ft_add_word(char **res, char const *s, int start, int len)
 
 static void	ft_fill(char **res, char const *s, char c)
 {
-	int		j;
 	int		k;
 	int		len;
 
-	j = 0;
 	while (*s)
 	{
 		while (*s == c)
