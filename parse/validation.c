@@ -83,14 +83,14 @@ long	ft_atol(char *token, t_list *head)
 	res = 0;
 	while ((token[i] >= 9 && token[i] <= 13) || (token[i] == ' '))
 		i++;
-	while (token[i] == '-' || token[i] == '+')
+	if (token[i] == '-' || token[i] == '+')
 	{
 		if (token[i] == '-')
 			sign *= -1;
 		i++;
 	}
 	is_valid(&token[i], head);
-	while (token[i] >= '0' && token[i] <= '9')
+	while (token[i] >= '0' && token[i] <= '9' && res <= INT_MAX)
 		res = res * 10 + (token[i++] - '0');
 	res *= sign;
 	min_max_checker(res, head);
