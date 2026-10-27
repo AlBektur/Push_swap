@@ -39,9 +39,7 @@ void	send_min_val(t_list **stack_a, t_list	**stack_b, t_flags *flags)
 	int		min;
 	int		idx;
 	int		i;
-	int		j;
 
-	j = 0;
 	temp = *stack_a;
 	idx = 0;
 	i = 0;
