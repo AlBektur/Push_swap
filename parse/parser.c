@@ -91,8 +91,8 @@ t_list	*make_stack(int argc, char **argv)
 	int		value;
 
 	value = 0;
-	if (argc == 1)
-		exit(1);
+	if (argc < 2)
+		exit(0);
 	else if (argc == 2)
 	{
 		tokens = ft_split(argv[1], ' ');
