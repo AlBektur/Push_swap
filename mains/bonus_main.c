@@ -52,7 +52,7 @@ int	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
 	else if (ft_strncmp(line, "rrr\n", 4))
 		rrr(stack_a, stack_b, flags);
 	else
-		return (0) ;
+		return (0);
 	return (1);
 }
 
