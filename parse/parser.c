@@ -65,7 +65,7 @@ static t_list	*make_list(int argc, char **tokens, int value)
 	while (i < argc)
 	{
 		value = ft_atol(tokens[i], head);
-		if (!is_dup(value, head));
+		if (!is_dup(value, head))
 			return (NULL);
 		temp = make_node(value);
 		if (head == NULL)
