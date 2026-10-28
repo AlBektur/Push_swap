@@ -102,7 +102,7 @@ void	make_bench(t_flags *flags)
 	ft_putnbr(flags->disorder % 100);
 	write(2, "%\n", 2);
 	write(2, "[bench] strategy: ", 18);
-	bench_print_alg_type(--flags->alg_type);
+	bench_print_alg_type(flags);
 	write(2, "\n[bench] total_ops: ", 20);
 	ft_putnbr(flags->total_op);
 	make_bench_aux(flags);
