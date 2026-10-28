@@ -44,16 +44,24 @@ static void	ft_putstr(char *str)
 	}
 }
 
-static void	bench_print_alg_type(int n)
+static void	bench_print_alg_type(t_flags *flags)
 {
-	char	*algorithms[5];
+	char	*names[4];
+	char	*classes[3];
+	int		n;
 
-	algorithms[0] = "Adaptive / O(n√n)";
-	algorithms[1] = "Simple / O(n2)";
-	algorithms[2] = "Medium / O(n√n)";
-	algorithms[3] = "Complex / O(n log n)";
-	algorithms[4] = NULL;
-	ft_putstr(algorithms[n]);
+	names[0] = "Adaptive / ";
+	names[1] = "Simple / ";
+	names[2] = "Medium / ";
+	names[3] = "Complex / ";
+	classes[0] = "O(n2)";
+	classes[1] = "O(n√n)";
+	classes[2] = "O(n log n)";
+	n = flags->alg_type - 2;
+	if (flags->alg_type == 1)
+		n = (flags->disorder >= 2000) + (flags->disorder >= 5000);
+	ft_putstr(names[flags->alg_type - 1]);
+	ft_putstr(classes[n]);
 }
 
 void	make_bench_aux(t_flags *flags)
