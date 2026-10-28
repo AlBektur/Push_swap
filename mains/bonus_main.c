@@ -27,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (1);
 }
 
-void	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
+int	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3))
 		sa(stack_a, flags);
@@ -52,7 +52,8 @@ void	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
 	else if (ft_strncmp(line, "rrr\n", 4))
 		rrr(stack_a, stack_b, flags);
 	else
-		return ;
+		return (0) ;
+	return (1);
 }
 
 int	main(int argc, char *argv[])
