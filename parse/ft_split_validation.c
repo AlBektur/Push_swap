@@ -88,7 +88,7 @@ void	ft_split_controler(char **tokens)
 		if (split_controler(tokens[i]) != 1)
 		{
 			ft_split_cleaner(tokens);
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		split_controler_2(tokens[i], tokens);
