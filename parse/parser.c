@@ -46,8 +46,7 @@ static int	is_dup(long value, t_list *head)
 		if (temp->data == value)
 		{
 			ft_killer(head);
-			write(2, "Error\n", 6);
-			exit(1);
+			return (0);
 		}
 		temp = temp->next;
 	}
@@ -66,18 +65,14 @@ static t_list	*make_list(int argc, char **tokens, int value)
 	while (i < argc)
 	{
 		value = ft_atol(tokens[i], head);
-		is_dup(value, head);
+		if (!is_dup(value, head));
+			return (NULL);
 		temp = make_node(value);
 		if (head == NULL)
-		{
 			head = temp;
-			tail = temp;
-		}
 		else
-		{
 			tail->next = temp;
-			tail = temp;
-		}
+		tail = temp;
 		i++;
 	}
 	return (head);
@@ -88,9 +83,7 @@ t_list	*make_stack(int argc, char **argv)
 	t_list	*head;
 	char	**tokens;
 	int		size;
-	int		value;
 
-	value = 0;
 	if (argc < 2)
 		exit(0);
 	else if (argc == 2)
@@ -98,14 +91,15 @@ t_list	*make_stack(int argc, char **argv)
 		tokens = ft_split(argv[1], ' ');
 		ft_split_controler(tokens);
 		size = arg_counter(tokens);
-		head = make_list(size, tokens, value);
+		head = make_list(size, tokens, 0);
 		ft_split_cleaner(tokens);
 	}
 	else
+		head = make_list(argc - 1, argv + 1, 0);
+	if (head == NULL)
 	{
-		tokens = argv + 1;
-		size = argc - 1;
-		head = make_list(size, tokens, value);
+		write(2, "Error\n", 6);
+		exit(1);
 	}
 	return (head);
 }
