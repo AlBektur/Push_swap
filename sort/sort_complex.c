@@ -1,107 +1,71 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sort_complex.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/26 05:01:15 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/26 05:01:18 by besaipid         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/header.h"
 
-static int	count_smaller(t_list *stack, int value)
+static int	chunk_dest(int loc, int cls)
 {
-	t_list	*cur;
-	int		count;
-
-	cur = stack;
-	count = 0;
-	while (cur != NULL)
-	{
-		if (cur->data < value)
-			count++;
-		cur = cur->next;
-	}
-	return (count);
+	if (cls == 0 && loc == TA)
+		return (BA);
+	if (cls == 0)
+		return (TA);
+	if (cls == 1 && (loc == TA || loc == BA))
+		return (TB);
+	if (cls == 1)
+		return (BA);
+	if (loc == BB)
+		return (TB);
+	return (BB);
 }
 
-static int	*alloc_ranks(t_list *stack, int n)
+static void	sort_chunk(t_ctx *c, int loc, int lo, int n)
 {
-	int	*ranks;
-
-	ranks = malloc(sizeof(int) * n);
-	if (ranks == NULL)
-	{
-		ft_killer(stack);
-		write(2, "Error\n", 6);
-		exit(1);
-	}
-	return (ranks);
-}
-
-static void	index_stack(t_list *stack, int n)
-{
-	int		*ranks;
-	t_list	*cur;
-	int		k;
-
-	ranks = alloc_ranks(stack, n);
-	cur = stack;
-	k = 0;
-	while (cur != NULL)
-	{
-		ranks[k++] = count_smaller(stack, cur->data);
-		cur = cur->next;
-	}
-	cur = stack;
-	k = 0;
-	while (cur != NULL)
-	{
-		cur->data = ranks[k++];
-		cur = cur->next;
-	}
-	free(ranks);
-}
-
-static void	radix_pass(t_list **a, t_list **b, t_flags *flags, int bit)
-{
+	int	third;
+	int	two;
 	int	i;
-	int	size;
+	int	v;
 
-	size = ft_lstsize(*a);
-	i = 0;
-	while (i < size)
+	if (n <= 0)
+		return ;
+	loc = to_top(c, loc, n);
+	n = easy_sort(c, &loc, lo, n);
+	if (n <= 3)
 	{
-		if ((((*a)->data >> bit) & 1) == 0)
-			push_b(a, b, flags);
-		else if ((*a)->next != NULL)
-			ra(a, flags);
-		i++;
+		small_sort(c, loc, n);
+		return ;
 	}
-	while (*b != NULL)
-		push_a(b, a, flags);
+	third = lo + n / 3;
+	two = lo + 2 * n / 3;
+	i = 0;
+	while (i++ < n)
+	{
+		v = take_val(c, loc);
+		split_move(c, loc, (v < two) + (v < third));
+	}
+	sort_chunk(c, chunk_dest(loc, 0), two, lo + n - two);
+	sort_chunk(c, chunk_dest(loc, 1), third, two - third);
+	sort_chunk(c, chunk_dest(loc, 2), lo, third - lo);
+}
+
+int	is_sorted(t_list *stack)
+{
+	while (stack != NULL && stack->next != NULL)
+	{
+		if (stack->data > stack->next->data)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
 void	sort_complex(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
-	int	size;
-	int	max_bit;
-	int	bit;
+	t_ctx	c;
+	int		n;
 
-	size = ft_lstsize(*stack_a);
-	if (size < 2)
+	n = ft_lstsize(*stack_a);
+	if (n < 2 || is_sorted(*stack_a))
 		return ;
-	index_stack(*stack_a, size);
-	max_bit = 0;
-	while ((size - 1) >> max_bit)
-		max_bit++;
-	bit = 0;
-	while (bit < max_bit)
-	{
-		radix_pass(stack_a, stack_b, flags, bit);
-		bit++;
-	}
+	normalize_ranks(*stack_a, n);
+	c.a = stack_a;
+	c.b = stack_b;
+	c.f = flags;
+	sort_chunk(&c, TA, 0, n);
 }
