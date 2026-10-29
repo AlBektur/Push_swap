@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 02:11:00 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/26 04:56:03 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/29 04:30:35 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,30 @@ int	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
 	return (1);
 }
 
+static void	ft_checker(t_list **stack_a, t_list **stack_b, t_flags *flags)
+{
+	char	*line;
+
+	line = get_next_line(0);
+	while (line != NULL)
+	{
+		make_op(stack_a, stack_b, flags, line);
+		free(line);
+		line = get_next_line(0);
+	}
+	free(line);
+	if (is_sorted(*stack_a) && *stack_b == NULL)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 	t_flags	*flags;
 	t_flags	node_for_flags;
-	char	*line;
 
 	flags = &node_for_flags;
 	stack_b = NULL;
@@ -70,16 +87,9 @@ int	main(int argc, char *argv[])
 	flags->checker = 1;
 	def_flags(&argc, &argv, flags);
 	stack_a = make_stack(argc, argv);
-	line = get_next_line(0);
-	while (line != NULL)
-	{
-		make_op(&stack_a, &stack_b, flags, line);
-		free(line);
-		line = get_next_line(0);
-	}
-	if (is_sorted(stack_a) && stack_b == NULL)
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
+	if (!is_sorted(stack_a))
+		ft_checker(&stack_a, &stack_b, flags);
+	ft_killer(stack_a);
+	ft_killer(stack_b);
 	return (0);
 }
