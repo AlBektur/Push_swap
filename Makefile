@@ -24,6 +24,8 @@ SRCS := ./parse/ft_split.c \
 		./sort/sort_utils.c \
 		./sort/selection_sort.c \
 		./sort/sort_complex.c \
+		./sort/sort_complex_moves.c \
+		./sort/sort_complex_small.c \
 		./sort/sort_medium.c \
 		./sort/sort_medium_utils.c \
 
