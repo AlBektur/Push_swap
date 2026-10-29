@@ -44,17 +44,6 @@ static void	sort_chunk(t_ctx *c, int loc, int lo, int n)
 	sort_chunk(c, chunk_dest(loc, 2), lo, third - lo);
 }
 
-int	is_sorted(t_list *stack)
-{
-	while (stack != NULL && stack->next != NULL)
-	{
-		if (stack->data > stack->next->data)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
-
 void	sort_complex(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	t_ctx	c;

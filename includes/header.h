@@ -20,6 +20,11 @@
 # include <string.h>
 # include <limits.h>
 
+# define TA 0
+# define BA 1
+# define TB 2
+# define BB 3
+
 typedef struct s_list
 {
 	int					data;
@@ -53,6 +58,13 @@ typedef struct s_flags
 	int	total_op;
 	int	checker;
 }		t_flags;
+
+typedef struct s_ctx
+{
+	t_list	**a;
+	t_list	**b;
+	t_flags	*f;
+}	t_ctx;
 
 void	ft_print_stack(t_list *stack);
 void	make_bench(t_flags *flags);
@@ -112,4 +124,10 @@ void	bring_top_b(t_list **b, int idx, int size, t_flags *flags);
 
 // for --complex mode
 void	sort_complex(t_list **stack_a, t_list **stack_b, t_flags *flags);
+int		take_val(t_ctx *c, int loc);
+void	move_one_to_ta(t_ctx *c, int loc);
+void	split_move(t_ctx *c, int loc, int cls);
+int		to_top(t_ctx *c, int loc, int n);
+int		easy_sort(t_ctx *c, int *loc, int lo, int n);
+void	small_sort(t_ctx *c, int loc, int n);
 #endif
