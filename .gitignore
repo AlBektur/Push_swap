@@ -1,0 +1,4 @@
+.vscode
+*.o
+checker*
+push_swap

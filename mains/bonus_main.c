@@ -6,7 +6,7 @@
 /*   By: besaipid <besaipid@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 02:11:00 by besaipid          #+#    #+#             */
-/*   Updated: 2026/10/29 04:30:35 by besaipid         ###   ########.fr       */
+/*   Updated: 2026/10/29 23:51:44 by besaipid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,27 @@ int	make_op(t_list **stack_a, t_list **stack_b, t_flags *flags, char *line)
 	else if (ft_strncmp(line, "rrr\n", 4))
 		rrr(stack_a, stack_b, flags);
 	else
-		return (0);
+		return (-1);
 	return (1);
 }
 
 static void	ft_checker(t_list **stack_a, t_list **stack_b, t_flags *flags)
 {
 	char	*line;
+	int		command_flag;
 
 	line = get_next_line(0);
 	while (line != NULL)
 	{
-		make_op(stack_a, stack_b, flags, line);
+		command_flag = make_op(stack_a, stack_b, flags, line);
 		free(line);
 		line = get_next_line(0);
+		if (command_flag == -1)
+		{
+			free(line);
+			write(2, "Error\n", 6);
+			return ;
+		}
 	}
 	free(line);
 	if (is_sorted(*stack_a) && *stack_b == NULL)
